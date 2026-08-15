@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Basic - Thuyết Trình Slide All-in-One | AI VIETNAM</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- KaTeX Math Formula Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app-container">
+
+    <!-- Top Navigation Bar -->
+    <header class="top-navbar">
+      <div class="brand-logo">
+        <img src="Logo TCC.png" alt="TCC Logo" style="height: 28px; width: auto;">
+        <span>THE CODIATION CLUB</span>
+        <span class="brand-badge">NEU IT • Basic Python</span>
+      </div>
+
+      <div class="nav-actions">
+        <button id="toc-btn" class="btn-icon" title="Mục lục bài học">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" />
+          </svg>
+          <span>Mục Lục</span>
+        </button>
+
+        <button id="fullscreen-btn" class="btn-icon" title="Toàn màn hình (F)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+          </svg>
+          <span>Toàn Màn Hình</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Slide Progress Bar -->
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+
+    <!-- Presentation Deck Viewport -->
+    <main class="deck-viewport">
+
+      <!-- ==================== SLIDE 1: HERO COVER SLIDE ==================== -->
+      <section class="slide hero-slide active" id="slide-1">
+        <!-- Top Center Logos -->
+        <div class="hero-logos">
+          <div class="hero-logo-card" title="Trường Đại học Kinh tế Quốc dân (NEU)">
+            <img src="Logo NEU.png" alt="Logo NEU" class="hero-logo-img">
+          </div>
+          <div class="hero-logo-card" title="The Codiation Club - CLB Kỹ Thuật Phần Mềm">
+            <img src="Logo TCC.png" alt="Logo TCC" class="hero-logo-img hero-logo-main">
+          </div>
+          <div class="hero-logo-card" title="Khoa Công Nghệ Thông Tin - NEU IT">
+            <img src="Logo IT.png" alt="Logo Khoa IT" class="hero-logo-img">
+          </div>
+        </div>
+
+        <div class="hero-org-tag">
+          CLB KỸ THUẬT PHẦN MỀM - THE CODIATION CLUB (TCC) • KHOA IT - NEU
+        </div>
+
+        <h1 class="hero-title">BÀI GIẢNG BASIC PYTHON</h1>
+        <p class="hero-subtitle">Chuỗi Bài Giảng Lập Trình Python Cơ Bản - Tổng Hợp Toàn Bộ Kiến Thức Lý Thuyết & Thực
+          Hành Code Mẫu</p>
+
+        <div class="hero-meta">
+          <div class="hero-chip">Đơn vị tổ chức: The Codiation Club (TCC)</div>
+          <div class="hero-chip">Trường Đại học Kinh tế Quốc dân (NEU)</div>
+          <div class="hero-chip">Khoa Công Nghệ Thông Tin (NEU IT)</div>
+        </div>
+
+        <button onclick="document.getElementById('next-btn').click()" class="btn-primary"
+          style="font-size: 1.05rem; padding: 12px 32px; border-radius: 30px;">
+          Bắt Đầu Bài Học ▶
+        </button>
+      </section>
+
+      <!-- ==================== SLIDE 2: TABLE OF CONTENTS ==================== -->
+      <section class="slide" id="slide-2">
+        <div class="slide-header">
+          <span class="slide-tag">Tổng Quan Bài Học</span>
+          <h2 class="slide-title">Mục Lục Toàn Bộ Khóa Học Python Cơ Bản</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>📘 Phần 1: Kiến Thức Cơ Bản (Wednesday)</h4>
+              <ul class="feature-list">
+                <li><strong>Chương 1:</strong> Bản chất Ngôn ngữ lập trình, Bit/Bytes, ASCII, C++ vs Python.</li>
+                <li><strong>Chương 2:</strong> Môi trường chạy Python, Virtualenv, Conda, Google Colab,
+                  <code>pip</code>.
+                </li>
+                <li><strong>Chương 3:</strong> Biến, Kiểu dữ liệu (<code>int</code>, <code>float</code>,
+                  <code>str</code>, <code>bool</code>), Toán tử, <code>math</code>, <code>random</code>.
+                </li>
+                <li><strong>Chương 4:</strong> Cấu trúc Hàm (<code>def</code>), Tham số mặc định, Xấp xỉ Chu vi/Diện
+                  tích đường tròn, Đạo hàm số học.</li>
+                <li><strong>Chương 5:</strong> Điều kiện <code>if-else</code>, Hàm kích hoạt ReLU, Sigmoid,
+                  Overflow/Underflow, Softmax Naive & Stable Softmax, Lãi suất kép.</li>
+              </ul>
+            </div>
+
+            <div class="content-box">
+              <h4>📙 Phần 2: Nâng Cao & Thao Tác (Friday)</h4>
+              <ul class="feature-list">
+                <li><strong>Chương 6:</strong> Vòng lặp <code>for</code>, <code>range()</code>,
+                  <code>break</code>/<code>continue</code>, Ước tính số $\pi$, số $e$, Newton-Raphson căn bậc 2.
+                </li>
+                <li><strong>Chương 7:</strong> Vòng lặp <code>while</code>, <code>while True</code>, Bài toán Mô phỏng
+                  ném đồng xu.</li>
+                <li><strong>Chương 8:</strong> Chuỗi Kí tự (Strings), Mã ASCII, Các hàm kiểm tra & phương thức biến đổi,
+                  Xử lý lỗi <code>ValueError</code>.</li>
+                <li><strong>Chương 9:</strong> Xử lý Tệp Dữ liệu (File Handling), Chế độ
+                  <code>'r'</code>/<code>'w'</code>/<code>'a'</code>, Quản lý file bằng <code>with</code>, Split/Join,
+                  Case study IRIS Dataset.
+                </li>
+                <li><strong>Chương 10:</strong> Đệ quy, Mô phỏng Monte Carlo, Dãy Fibonacci, Tam giác Pascal, Khai triển
+                  chuỗi Taylor, Cheat Sheet & Trắc nghiệm.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 3: CHƯƠNG 1 ==================== -->
+      <section class="slide" id="slide-3">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 1: Ngôn Ngữ Lập Trình</span>
+          <h2 class="slide-title">1.1 Bản Chất Máy Tính & Biểu Diễn Số Trong Bộ Nhớ</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Lưu Trữ Dữ Liệu Bằng Bits & Bytes</h4>
+              <ul class="feature-list">
+                <li>Máy tính lưu trữ thông tin dưới dạng các dãy <strong>Bit (0 và 1)</strong>.</li>
+                <li>Với <strong>3 bits</strong>: Có $2^3 = 8$ trạng thái (từ <code>000</code> đến <code>111</code>).
+                  Biểu diễn được số nguyên dương ($0..7$), số âm ($-1..-8$), hoặc hỗn hợp ($-3..4$).</li>
+                <li>Với <strong>8 bits (1 Byte)</strong>: Có $2^8 = 256$ trạng thái:
+                  <ul class="sub-list">
+                    <li><code>unsigned char</code>: Số nguyên không dấu ($0$ đến $255$).</li>
+                    <li><code>char</code> (Signed): Số nguyên có dấu ($-128$ đến $127$).</li>
+                  </ul>
+                </li>
+                <li><strong>Số thực Floating-Point</strong>:
+                  <ul class="sub-list">
+                    <li><code>float</code> ($4 \text{ bytes} = 32 \text{ bits}$): Độ chính xác đơn.</li>
+                    <li><code>double</code> ($8 \text{ bytes} = 64 \text{ bits}$): Độ chính xác kép.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON / C CONCEPT</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># Khai báo số nguyên & số thực trong Python
+# Python tự động quản lý kiểu dữ liệu bộ nhớ
+
+a_number = 6        # 8-bit representation: 00000110
+pi_val = 3.14       # Float 32-bit/64-bit representation
+e_val = 2.71828     # Double precision float
+
+print("Giá trị a_number:", a_number)
+print("Giá trị pi_val:", pi_val)
+print("Giá trị e_val:", e_val)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Giá trị a_number: 6
+                  Giá trị pi_val: 3.14
+                  Giá trị e_val: 2.71828</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 4: CHƯƠNG 1 (TIẾP) ==================== -->
+      <section class="slide" id="slide-4">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 1: Ngôn Ngữ Lập Trình</span>
+          <h2 class="slide-title">1.2 Bảng Mã ASCII & So Sánh C++ vs Python</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Lưu Trữ Văn Bản & So Sánh C++ / Python</h4>
+              <ul class="feature-list">
+                <li><strong>Bảng mã ASCII</strong>: Mã hóa 128 kí tự tiêu chuẩn thành các số 8-bit (Byte). Ví dụ: Kí tự
+                  <code>'A'</code> có mã Decimal 65 (<code>01000001</code>).
+                </li>
+                <li><strong>C++</strong>: Ngôn ngữ biên dịch (Compiled), tĩnh (Statically Typed), quản lý bộ nhớ thủ
+                  công, cú pháp dài.</li>
+                <li><strong>Python</strong>: Ngôn ngữ thông dịch (Interpreted), động (Dynamically Typed), cú pháp cực kỳ
+                  tinh gọn, giàu thư viện AI/Data Science.</li>
+                <li><strong>Hệ sinh thái Python</strong>: Đứng Top 1 ngôn ngữ phổ biến theo IEEE Spectrum & TIOBE Index.
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++ VS PYTHON</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># C++ Code tương đương:
+# #include &lt;iostream&gt;
+# using namespace std;
+# int main() { cout &lt;&lt; "Hello World!"; return 0; }
+
+# Python Code: Cực kỳ đơn giản!
+print("Hello World!")
+
+# Chuyển đổi mã ASCII trong Python
+char_a = 'A'
+ascii_code = ord(char_a)
+print(f"Kí tự '{char_a}' có mã ASCII decimal là: {ascii_code}")
+print(f"Mã ASCII 65 tương ứng kí tự: '{chr(65)}'")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Hello World!
+                  Kí tự 'A' có mã ASCII decimal là: 65
+                  Mã ASCII 65 tương ứng kí tự: 'A'</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 5: CHƯƠNG 2 ==================== -->
+      <section class="slide" id="slide-5">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 2: Môi Trường Python</span>
+          <h2 class="slide-title">2.1 Môi Trường Lập Trình & Quản Lý Thư Viện (<code>pip</code>)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Các Cách Thực Thi & Quản Lý Virtualenv</h4>
+              <ul class="feature-list">
+                <li><strong>Thực thi file Python</strong>: Tạo file <code>.py</code> và chạy trên terminal:
+                  <code>python file.py</code>.
+                </li>
+                <li><strong>Môi trường ảo (Virtual Environment)</strong>: Giúp cô lập các phiên bản thư viện giữa các dự
+                  án khác nhau (tránh xung đột phiên bản TensorFlow / PyTorch).</li>
+                <li><strong>Các lệnh Virtualenv & Conda</strong>:
+                  <ul class="sub-list">
+                    <li>Linux <code>venv</code>: <code>python3 -m venv myenv</code> &
+                      <code>source myenv/bin/activate</code>
+                    </li>
+                    <li>Conda: <code>conda create -n test_env python=3.9</code> & <code>conda activate test_env</code>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Quản lý thư viện <code>pip</code></strong>: <code>pip install matplotlib</code>,
+                  <code>pip list</code>.
+                </li>
+                <li><strong>Công cụ phát triển</strong>: Google Colab, Anaconda, Jupyter Notebook, VS Code.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">BASH / TERMINAL COMMANDS</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-bash"># 1. Cài đặt môi trường ảo trên Linux
+sudo apt-get install -y python3-venv
+python3 -m venv aivn_env
+source aivn_env/bin/activate
+
+# 2. Cài đặt gói thư viện mới
+pip install matplotlib
+
+# 3. Kiểm tra danh sách thư viện đã cài
+pip list
+
+# 4. Khởi chạy Jupyter Notebook
+jupyter notebook</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">TERMINAL OUTPUT:</div>
+                <div class="output-content">Successfully installed matplotlib-3.7.1 numpy-1.24.2
+                  Package Version
+                  --------------- -------
+                  matplotlib 3.7.1
+                  numpy 1.24.2
+                  pip 23.0.1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 6: CHƯƠNG 3 ==================== -->
+      <section class="slide" id="slide-6">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 3: Biến & Kiểu Dữ Liệu</span>
+          <h2 class="slide-title">3.1 Khai Báo Biến & 4 Kiểu Dữ Liệu Cơ Bản</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Quy Tắc Đặt Tên Biến & Kiểu Dữ Liệu</h4>
+              <ul class="feature-list">
+                <li><strong>Cú pháp gán biến</strong>: <code>variable_name = variable_value</code></li>
+                <li><strong>Quy tắc đặt tên</strong>: Nên mang ý nghĩa (Clear naming), viết dạng
+                  <code>snake_case</code>, bắt đầu bằng chữ cái hoặc <code>_</code>, <strong>không trùng từ khóa
+                    (Keywords)</strong> như <code>if</code>, <code>for</code>, <code>def</code>, <code>class</code>...
+                </li>
+                <li><strong>4 Kiểu Dữ Liệu Cơ Bản</strong>:
+                  <ul class="sub-list">
+                    <li>1. <strong>Integer (<code>int</code>)</strong>: <code>1, 2, 3, 0, -1, -2</code></li>
+                    <li>2. <strong>Float (<code>float</code>)</strong>: <code>1.5, 0.5, -3.21, 1.0</code></li>
+                    <li>3. <strong>String (<code>str</code>)</strong>: <code>'Joe'</code>, <code>"Schmoe"</code>,
+                      <code>"AI VIETNAM"</code>
+                    </li>
+                    <li>4. <strong>Boolean (<code>bool</code>)</strong>: <code>True</code>, <code>False</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># Khai báo các kiểu dữ liệu cơ bản
+student_age = 20           # Integer
+gpa_score = 3.85           # Float
+course_name = "AI Course"  # String
+is_passed = True           # Boolean
+
+# Kiểm tra kiểu dữ liệu bằng hàm type()
+print("student_age:", student_age, "| Type:", type(student_age))
+print("gpa_score:", gpa_score, "| Type:", type(gpa_score))
+print("course_name:", course_name, "| Type:", type(course_name))
+print("is_passed:", is_passed, "| Type:", type(is_passed))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">student_age: 20 | Type: &lt;class 'int'&gt;
+                  gpa_score: 3.85 | Type: &lt;class 'float'&gt;
+                  course_name: AI Course | Type: &lt;class 'str'&gt;
+                  is_passed: True | Type: &lt;class 'bool'&gt;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 7: TOÁN TỬ SỐ HỌC ==================== -->
+      <section class="slide" id="slide-7">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 3: Toán Tử Số Học</span>
+          <h2 class="slide-title">3.2 Các Toán Tử Số Học Cơ Bản (Basic Arithmetic Operators)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Bảng Tra Cứu Các Toán Tử Số Học trong Python</h4>
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Toán Tử</th>
+                    <th>Ý Nghĩa</th>
+                    <th>Ví Dụ Minh Họa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>+</code></td>
+                    <td>Phép cộng</td>
+                    <td><code>2 + 3 = 5</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>-</code></td>
+                    <td>Phép trừ</td>
+                    <td><code>3 - 2 = 1</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>*</code></td>
+                    <td>Phép nhân</td>
+                    <td><code>2 * 2 = 4</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>/</code></td>
+                    <td>Phép chia thực</td>
+                    <td><code>10 / 2 = 5.0</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>%</code></td>
+                    <td>Phép chia lấy số dư (Modulo)</td>
+                    <td><code>10 % 4 = 2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>//</code></td>
+                    <td>Phép chia lấy số nguyên (Floor Division)</td>
+                    <td><code>18 // 5 = 3</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>**</code></td>
+                    <td>Phép lũy thừa ($x^y$)</td>
+                    <td><code>3 ** 5 = 243</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE: BASIC OPERATORS</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># aivietnam.ai
+
+# Khai báo biến x với giá trị là 3
+x = 3
+
+# Khai báo biến y với giá trị là 2
+y = 2
+
+# Lấy giá trị của x cộng giá trị của y rồi in ra kết quả
+print("x + y =", x + y)
+
+# Lấy giá trị của x trừ giá trị của y rồi in ra kết quả
+print("x - y =", x - y)
+
+# Lấy giá trị của x nhân với giá trị của y rồi in ra kết quả
+print("x * y =", x * y)
+
+# Lấy giá trị của x chia với giá trị của y rồi in ra kết quả
+print("x / y =", x / y)
+
+# Lấy giá trị của x chia lấy phần dư cho y
+print("x % y =", x % y)
+
+# Lấy giá trị của x chia với giá trị của y chỉ lấy phần nguyên
+print("x // y =", x // y)
+
+# Lấy giá trị x mũ y (x^y)
+print("x ** y =", x ** y)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">x + y = 5
+                  x - y = 1
+                  x * y = 6
+                  x / y = 1.5
+                  x % y = 1
+                  x // y = 1
+                  x ** y = 9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 8: CHƯƠNG 3 (TIẾP) ==================== -->
+      <section class="slide" id="slide-8">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 3: Biến & Kiểu Dữ Liệu</span>
+          <h2 class="slide-title">3.3 Built-in Functions, Ép Kiểu & Các Hàm <code>math</code> / <code>random</code></h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Hàm Dựng Sẵn & Thư Viện Toán Học / Xác Suất</h4>
+              <ul class="feature-list">
+                <li><strong>Hàm tích hợp (Built-in)</strong>: <code>print()</code>, <code>type()</code>,
+                  <code>input()</code>, <code>round()</code>, <code>abs()</code>.
+                </li>
+                <li><strong>Ép kiểu (Type Conversion)</strong>: <code>int()</code>, <code>float()</code>,
+                  <code>str()</code>. (Hàm <code>input()</code> luôn trả về <code>str</code>).
+                </li>
+                <li><strong>Thư viện <code>math</code> (Toán Học Chuyên Sâu)</strong>:
+                  <ul class="sub-list">
+                    <li><code>math.sqrt(x)</code>: Căn bậc 2 | <code>math.pow(x, y)</code>: Lũy thừa $x^y$</li>
+                    <li><code>math.exp(x)</code>: Hàm mũ $e^x$ | <code>math.log(x, base)</code>: Logarit</li>
+                    <li><code>math.sin(x)</code>, <code>math.cos(x)</code>, <code>math.tan(x)</code>: Lượng giác
+                      (Radian)</li>
+                    <li><code>math.ceil(x)</code>: Làm tròn lên | <code>math.floor(x)</code>: Làm tròn xuống</li>
+                    <li><code>math.pi</code>, <code>math.e</code>: Hằng số $\pi \approx 3.14159$, $e \approx 2.71828$
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Thư viện <code>random</code> (Sinh Số Ngẫu Nhiên & Xác Suất)</strong>:
+                  <ul class="sub-list">
+                    <li><code>random.random()</code>: Số thực ngẫu nhiên $N \in [0.0, 1.0)$</li>
+                    <li><code>random.randint(a, b)</code>: Số nguyên ngẫu nhiên $N \in [a, b]$</li>
+                    <li><code>random.uniform(a, b)</code>: Số thực ngẫu nhiên $N \in [a, b]$</li>
+                    <li><code>random.choice(sequence)</code>: Lấy 1 phần tử ngẫu nhiên</li>
+                    <li><code>random.shuffle(list)</code>: Xáo trộn danh sách ngẫu nhiên</li>
+                    <li><code>random.seed(value)</code>: Cố định hạt giống sinh số ngẫu nhiên</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE: MATH & RANDOM</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+import random
+
+# --- THƯ VIỆN MATH ---
+print("--- THƯ VIỆN MATH ---")
+print("math.sqrt(16)       :", math.sqrt(16))
+print("math.pow(2, 3)      :", math.pow(2, 3))
+print("math.exp(1)         :", round(math.exp(1), 5))
+print("math.log(100, 10)   :", math.log(100, 10))
+print("math.sin(math.pi / 2):", math.sin(math.pi / 2))
+print("math.ceil(3.14)     :", math.ceil(3.14))
+print("math.floor(3.99)    :", math.floor(3.99))
+print("Hằng số pi & e      :", round(math.pi, 4), round(math.e, 4))
+
+# --- THƯ VIỆN RANDOM ---
+print("\n--- THƯ VIỆN RANDOM ---")
+random.seed(42)  # Cố định hạt giống ngẫu nhiên
+print("random.random()    :", round(random.random(), 4))
+print("random.randint(1, 6):", random.randint(1, 6))
+print("random.uniform(5,10):", round(random.uniform(5, 10), 2))
+
+colors = ["Đỏ", "Xanh", "Vàng", "Tím"]
+print("random.choice()    :", random.choice(colors))
+
+numbers = [1, 2, 3, 4, 5]
+random.shuffle(numbers)
+print("random.shuffle()   :", numbers)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">--- THƯ VIỆN MATH ---
+                  math.sqrt(16) : 4.0
+                  math.pow(2, 3) : 8.0
+                  math.exp(1) : 2.71828
+                  math.log(100, 10) : 2.0
+                  math.sin(math.pi / 2): 1.0
+                  math.ceil(3.14) : 4
+                  math.floor(3.99) : 3
+                  Hằng số pi & e : 3.1416 2.7183
+
+                  --- THƯ VIỆN RANDOM ---
+                  random.random() : 0.6394
+                  random.randint(1, 6): 1
+                  random.uniform(5,10): 5.13
+                  random.choice() : Xanh
+                  random.shuffle() : [4, 1, 5, 2, 3]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 8: CHƯƠNG 3 (TIẾP) ==================== -->
+      <section class="slide" id="slide-8">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 3: Ứng Dụng</span>
+          <h2 class="slide-title">3.3 Bài Toán Thực Tế: Chuyển Đổi Nhiệt Độ & Hình Học</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Công Thức Tính Toán Thực Tế</h4>
+              <div class="math-block">
+                $$F = \frac{9}{5}C + 32 \quad \Longleftrightarrow \quad C = (F - 32) \times \frac{5}{9}$$
+              </div>
+              <ul class="feature-list">
+                <li><strong>Chuyển đổi nhiệt độ</strong>: Đổi Celsius sang Fahrenheit và ngược lại.</li>
+                <li><strong>Chu vi & Diện tích hình chữ nhật</strong>:
+                  <div class="math-block">
+                    $$\text{Perimeter} = 2 \times (h + w), \quad \text{Area} = h \times w$$
+                  </div>
+                </li>
+                <li><strong>Chu vi & Diện tích hình tròn</strong>:
+                  <div class="math-block">
+                    $$\text{Perimeter} = 2 \pi r, \quad \text{Area} = \pi r^2$$
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+
+# 1. Chuyển đổi Celsius -> Fahrenheit
+celsius = 30.0
+fahrenheit = (9/5) * celsius + 32
+print(f"{celsius}°C = {fahrenheit}°F")
+
+# 2. Chuyển đổi Fahrenheit -> Celsius
+f_in = 86.0
+c_out = (f_in - 32) * (5/9)
+print(f"{f_in}°F = {c_out}°C")
+
+# 3. Tính diện tích hình tròn r = 5.0
+radius = 5.0
+circle_area = math.pi * (radius ** 2)
+print(f"Diện tích hình tròn r={radius}: {circle_area:.4f}")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">30.0°C = 86.0°F
+                  86.0°F = 30.0°C
+                  Diện tích hình tròn r=5.0: 78.5398</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 9: CHƯƠNG 4 ==================== -->
+      <section class="slide" id="slide-9">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 4: Functions</span>
+          <h2 class="slide-title">4.1 Định Nghĩa Hàm & Tham Số Mặc Định (Default Values)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Cấu Trúc Định Nghĩa Hàm Trong Python</h4>
+              <ul class="feature-list">
+                <li><strong>Tên hàm</strong>: Nên bắt đầu bằng động từ, dùng <code>snake_case</code> (VD:
+                  <code>compute_rectangle_area</code>).
+                </li>
+                <li><strong>Quy tắc thụt lùi (Indentation)</strong>: Bắt buộc dùng <strong>4 dấu cách (4
+                    spaces)</strong> cho khối code bên trong hàm.</li>
+                <li><strong>Docstring</strong>: Mô tả chức năng của hàm nằm trong cặp dấu <code>'''docstring'''</code>.
+                </li>
+                <li><strong>Giá trị mặc định (Default Values)</strong>: Cho phép tham số có giá trị mặc định nếu người
+                  dùng không truyền vào.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def compute_rectangle_area(height, width=1.0):
+    '''Hàm tính diện tích hình chữ nhật với width mặc định = 1.0'''
+    area = height * width
+    return area
+
+def greet_user(name="Học viên", course="The Codiation Club"):
+    return f"Chào {name}, chào mừng đến với khóa {course}!"
+
+# Gọi hàm với tham số đầy đủ và tham số mặc định
+print("Diện tích (h=5, w=4):", compute_rectangle_area(5, 4))
+print("Diện tích (h=5, w mặc định):", compute_rectangle_area(5))
+print(greet_user())
+print(greet_user("baocutewaa", "Python Advanced"))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Diện tích (h=5, w=4): 20
+                  Diện tích (h=5, w mặc định): 5.0
+                  Chào Học viên, chào mừng đến với khóa The Codiation Club!
+                  Chào baocutewaa, chào mừng đến với khóa Python Advanced!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 10: CHƯƠNG 4 (TIẾP) ==================== -->
+      <section class="slide" id="slide-10">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 4: Functions</span>
+          <h2 class="slide-title">4.2 Bài Toán Xấp Xỉ Chu Vi & Diện Tích Đường Tròn Đơn Vị</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Mô Hình Chia Nhỏ $m$ Đoạn (Polygon Approximation)</h4>
+              <div class="math-block">
+                $$\alpha = \frac{2\pi}{m}, \quad L = m \times \sin(\alpha), \quad A = m \times
+                \frac{\sin(\alpha)\cos(\alpha)}{2}$$
+              </div>
+              <ul class="feature-list">
+                <li>Khi chia đường tròn đơn vị ($r=1$) thành $m$ đoạn tam giác cân:
+                  <ul class="sub-list">
+                    <li>Góc ở tâm của mỗi phân đoạn là $\alpha = \frac{2\pi}{m}$.</li>
+                    <li>Độ dài chu vi xấp xỉ $L = m \cdot \sin(\alpha)$.</li>
+                    <li>Diện tích xấp xỉ $A = m \cdot A_{\alpha} = m \cdot \frac{\sin(\alpha)\cos(\alpha)}{2}$.</li>
+                  </ul>
+                </li>
+                <li>Khi $m \to \infty$, giá trị $L \to 2\pi \approx 6.28318$ và $A \to \pi \approx 3.14159$.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+
+def compute_unit_circle_perimeter(m):
+    alpha = (2 * math.pi) / m
+    return m * math.sin(alpha)
+
+def compute_unit_circle_area(m):
+    alpha = (2 * math.pi) / m
+    area_triangle = (math.sin(alpha) * math.cos(alpha)) / 2
+    return m * area_triangle
+
+print("Chu vi xấp xỉ (m=10):", compute_unit_circle_perimeter(10))
+print("Chu vi xấp xỉ (m=1000):", compute_unit_circle_perimeter(1000))
+print("Diện tích xấp xỉ (m=10):", compute_unit_circle_area(10))
+print("Diện tích xấp xỉ (m=10000):", compute_unit_circle_area(10000))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Chu vi xấp xỉ (m=10): 5.877852522924731
+                  Chu vi xấp xỉ (m=1000): 6.283145388277259
+                  Diện tích xấp xỉ (m=10): 2.938926261462366
+                  Diện tích xấp xỉ (m=10000): 3.1415925307436034</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 11: CHƯƠNG 4 (TIẾP) ==================== -->
+      <section class="slide" id="slide-11">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 4: Functions</span>
+          <h2 class="slide-title">4.3 Ứng Dụng Đạo Hàm Số Học (Numerical Derivative)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Công Thức Đạo Hàm Một Bên Trong Máy Tính</h4>
+              <div class="math-block">
+                $$f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
+              </div>
+              <ul class="feature-list">
+                <li>Xét hàm số $f(x) = x^2 + 2x$, đạo hàm lý thuyết $f'(x) = 2x + 2$. Tại $x = 3 \implies f'(3) = 8$.
+                </li>
+                <li>Trên máy tính, ta chọn $\Delta x$ (epsilon) rất nhỏ (ví dụ $10^{-5}$) để xấp xỉ đạo hàm tại điểm
+                  $x$.</li>
+                <li>Theo lý thuyết, $\Delta x$ càng nhỏ thì giá trị đạo hàm càng chính xác!</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def f(x):
+    return x**2 + 2*x
+
+def compute_derivative(x, delta_x=1e-5):
+    '''Tính đạo hàm số học một bên f'(x)'''
+    return (f(x + delta_x) - f(x)) / delta_x
+
+x_val = 3
+approx_diff = compute_derivative(x_val)
+exact_diff = 2 * x_val + 2
+
+print(f"Giá trị đạo hàm lý thuyết f'({x_val}) = {exact_diff}")
+print(f"Giá trị đạo hàm số học f'({x_val})  = {approx_diff:.6f}")
+print(f"Sai số tuyệt đối: {abs(approx_diff - exact_diff):.8f}")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Giá trị đạo hàm lý thuyết f'(3) = 8
+                  Giá trị đạo hàm số học f'(3) = 8.000010
+                  Sai số tuyệt đối: 0.00001000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 12: CHƯƠNG 5 ==================== -->
+      <section class="slide" id="slide-12">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 5: Conditions</span>
+          <h2 class="slide-title">5.1 Cấu Trúc Điều Kiện & Hàm Kích Hoạt ReLU</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Cú Pháp If-Else & Ứng Dụng Trong Deep Learning</h4>
+              <ul class="feature-list">
+                <li>Toán tử so sánh: <code>==</code> (bằng), <code>!=</code> (khác), <code>&gt;</code>,
+                  <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.
+                </li>
+                <li>Cấu trúc: <code>if condition: ... elif condition: ... else: ...</code></li>
+                <li><strong>Hàm kích hoạt ReLU (Rectified Linear Unit)</strong>:
+                  <div class="math-block">
+                    $$\text{ReLU}(x) = \begin{cases} 0 & \text{nếu } x \le 0 \\ x & \text{nếu } x > 0 \end{cases}$$
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def relu(x):
+    '''Hàm kích hoạt ReLU trong mạng Nơ-ron'''
+    if x <= 0:
+        return 0
+    else:
+        return x
+
+print("ReLU(-5.0) =", relu(-5.0))
+print("ReLU(0.0)  =", relu(0.0))
+print("ReLU(3.14) =", relu(3.14))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">ReLU(-5.0) = 0
+                  ReLU(0.0) = 0
+                  ReLU(3.14) = 3.14</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 13: CHƯƠNG 5 (TIẾP) ==================== -->
+      <section class="slide" id="slide-13">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 5: Conditions</span>
+          <h2 class="slide-title">5.2 Chuyển Đổi If-Else Thành Biểu Thức Toán Học & One-Hot Vector</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Kỹ Thuật Toán Học Hóa Điều Kiện Nhánh</h4>
+              <ul class="feature-list">
+                <li>Nếu $a = 0 \implies y = b^2$; nếu $a = K \implies y = b$:
+                  <div class="math-block">
+                    $$y = \frac{a}{K} b + \frac{K - a}{K} b^2$$
+                  </div>
+                </li>
+                <li>Chuyển biến điều kiện $a \in \{0, 1, 2\}$ thành <strong>One-Hot Vector $\mathbf{v}$</strong>:
+                  <ul class="sub-list">
+                    <li>$a = 0 \implies \mathbf{v} = [1, 0, 0]$</li>
+                    <li>$a = 1 \implies \mathbf{v} = [0, 1, 0]$</li>
+                    <li>$a = 2 \implies \mathbf{v} = [0, 0, 1]$</li>
+                  </ul>
+                </li>
+                <li>Đặt $\mathbf{u} = [b^2, b, b]^T$, ta có $y = \mathbf{v} \cdot \mathbf{u}$.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def compute_y_if(a, b):
+    if a == 0:
+        return b**2
+    elif a == 1:
+        return b
+    else:
+        return b
+
+def compute_y_onehot(a, b):
+    # One-hot encoding vector
+    v = [0, 0, 0]
+    v[a] = 1
+    u = [b**2, b, b]
+    # Dot product v . u
+    return sum(v[i] * u[i] for i in range(3))
+
+print("If-else (a=0, b=3):", compute_y_if(0, 3))
+print("One-hot (a=0, b=3):", compute_y_onehot(0, 3))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">If-else (a=0, b=3): 9
+                  One-hot (a=0, b=3): 9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 14: CHƯƠNG 5 (TIẾP) ==================== -->
+      <section class="slide" id="slide-14">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 5: Advanced AI Concepts</span>
+          <h2 class="slide-title">5.3 Hàm Sigmoid, Tanh & Hiện Tượng Tràn Số (Overflow/Underflow)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Hàm Kích Hoạt S-Shape & Giới Hạn Máy Tính</h4>
+              <div class="math-block">
+                $$\text{Sigmoid}(x) = \frac{1}{1 + e^{-x}}, \quad \text{Tanh}(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+              </div>
+              <ul class="feature-list">
+                <li><strong>Underflow (Tràn dưới)</strong>: Số quá nhỏ gần 0 vượt giới hạn lưu trữ biến $\implies$ bị
+                  làm tròn về <code>0.0</code> (VD: <code>1e-1000</code>).</li>
+                <li><strong>Overflow (Tràn trên)</strong>: Số quá lớn vượt giới hạn bộ nhớ $\implies$ biến thành
+                  <code>inf</code> (VD: <code>1e1000</code>).
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+
+def sigmoid(x):
+    return 1 / (1 + math.exp(-x))
+
+print("Sigmoid(0):", sigmoid(0))
+print("Sigmoid(2):", sigmoid(2))
+
+# Minh họa Underflow & Overflow
+result_underflow = 1e-1000
+result_overflow = 1e1000
+
+print("Underflow (1e-1000):", result_underflow)
+print("Overflow (1e1000):  ", result_overflow)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Sigmoid(0): 0.5
+                  Sigmoid(2): 0.8807970779778823
+                  Underflow (1e-1000): 0.0
+                  Overflow (1e1000): inf</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 15: CHƯƠNG 5 (TIẾP) ==================== -->
+      <section class="slide" id="slide-15">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 5: Advanced AI Concepts</span>
+          <h2 class="slide-title">5.4 Softmax Naive vs Stable Softmax & Hàm Mũ Lãi Suất</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Giải Quyết Lỗi Overflow Trong Softmax</h4>
+              <div class="math-block">
+                $$P_i = \frac{e^{x_i - m}}{\sum_j e^{x_j - m}} \quad \text{với } m = \max(\mathbf{x})$$
+              </div>
+              <ul class="feature-list">
+                <li>Khi $x_i$ lớn (như $1000$), $e^{1000}$ gây lỗi <code>Overflow</code> trong Softmax Naive.</li>
+                <li><strong>Stable Softmax</strong>: Trừ đi $m = \max(\mathbf{x})$ giúp tất cả phần tử $\le 0 \implies
+                  e^{x_i - m} \in (0, 1]$, triệt tiêu tràn số!</li>
+                <li><strong>Hàm Mũ Lãi Suất</strong>: Lãi ghép $n$ lần/năm: $A_t = A(1 + \frac{r}{n})^{nt}$. Khi $n \to
+                  \infty \implies A_t = A e^{rt}$.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+
+def softmax_stable(x_list):
+    max_x = max(x_list)
+    exp_x = [math.exp(x - max_x) for x in x_list]
+    sum_exp = sum(exp_x)
+    return [e / sum_exp for e in exp_x]
+
+x = [1.0, 2.0, 3.0]
+x_large = [1000.0, 1001.0, 1002.0]
+
+print("Softmax [1, 2, 3]:", [round(p, 4) for p in softmax_stable(x)])
+print("Stable Softmax x lớn:", [round(p, 4) for p in softmax_stable(x_large)])</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Softmax [1, 2, 3]: [0.0901, 0.2447, 0.6652]
+                  Stable Softmax x lớn: [0.0901, 0.2447, 0.6652]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 16: CHƯƠNG 6 ==================== -->
+      <section class="slide" id="slide-16">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 6: For Loops</span>
+          <h2 class="slide-title">6.1 Cấu Trúc Vòng Lặp For, <code>range()</code> & Break / Continue</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Cú Pháp & Từ Khóa Điều Khiển Lặp</h4>
+              <ul class="feature-list">
+                <li>Vòng lặp <code>for</code> duyệt qua các phần tử của một <strong>Iterable</strong>
+                  (<code>String</code>, <code>List</code>, <code>Tuple</code>, <code>Dict</code>, <code>range()</code>).
+                </li>
+                <li>Hàm <code>range(start, stop, step)</code>: Sinh chuỗi số nguyên từ <code>start</code> tới
+                  <code>stop - 1</code>.
+                </li>
+                <li><code>break</code>: Thoát lập tức khỏi vòng lặp <code>for</code>.</li>
+                <li><code>continue</code>: Bỏ qua các câu lệnh còn lại của lần lặp hiện tại, chuyển sang lần lặp tiếp
+                  theo.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">print("Vòng lặp range(5):")
+for i in range(5):
+    print(i, end=" ")
+print("\n")
+
+print("Demo break (dừng khi i == 3):")
+for i in range(5):
+    if i == 3:
+        break
+    print(i, end=" ")
+print("\n")
+
+print("Demo continue (bỏ qua i == 2):")
+for i in range(5):
+    if i == 2:
+        continue
+    print(i, end=" ")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Vòng lặp range(5):
+                  0 1 2 3 4
+
+                  Demo break (dừng khi i == 3):
+                  0 1 2
+
+                  Demo continue (bỏ qua i == 2):
+                  0 1 3 4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 17: CHƯƠNG 6 (TIẾP) ==================== -->
+      <section class="slide" id="slide-17">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 6: For Loops</span>
+          <h2 class="slide-title">6.2 Bài Toán Thực Tế: Ước Tính Số PI ($\pi$) Bằng Chuỗi Số</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Chuỗi Gregory-Leibniz & Nilakantha</h4>
+              <div class="math-block">
+                $$\text{Gregory-Leibniz: } \pi \approx 4 \sum_{i=1}^n \frac{(-1)^{i+1}}{2i - 1}$$
+              </div>
+              <div class="math-block">
+                $$\text{Nilakantha: } \pi \approx 3 + 4 \sum_{i=0}^n \frac{(-1)^i}{(2i+2)(2i+3)(2i+4)}$$
+              </div>
+              <ul class="feature-list">
+                <li>Chuỗi Nilakantha hội tụ nhanh hơn nhiều so với chuỗi Gregory-Leibniz!</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def pi_gregory_leibniz(n):
+    pi = 0
+    for i in range(1, n + 1):
+        pi += ((-1)**(i + 1)) / (2*i - 1)
+    return 4 * pi
+
+def pi_nilakantha(n):
+    pi = 3.0
+    for i in range(n):
+        term = ((-1)**i) * 4 / ((2*i + 2) * (2*i + 3) * (2*i + 4))
+        pi += term
+    return pi
+
+print("PI Gregory-Leibniz (n=1000):", pi_gregory_leibniz(1000))
+print("PI Nilakantha (n=100):      ", pi_nilakantha(100))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">PI Gregory-Leibniz (n=1000): 3.140592653839794
+                  PI Nilakantha (n=100): 3.1415924109719824</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 18: CHƯƠNG 6 (TIẾP) ==================== -->
+      <section class="slide" id="slide-18">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 6: For Loops</span>
+          <h2 class="slide-title">6.3 Ước Tính Số Euler $e$ & Thuật Toán Căn Bậc 2 Newton-Raphson</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Thuật Toán Newton-Raphson Tính $\sqrt{N}$</h4>
+              <div class="math-block">
+                $$x_{n+1} = \frac{x_n + \frac{N}{x_n}}{2} \quad \text{với } x_0 = \frac{N}{2}$$
+              </div>
+              <ul class="feature-list">
+                <li>Ví dụ tìm $\sqrt{9}$: Với $x_0 = 4.5 \implies x_1 = 3.25 \implies x_2 = 3.009 \implies x_3 =
+                  3.00001$. Hội tụ cực kỳ nhanh!</li>
+                <li>Số $e$ được tính qua tổng giai thừa $e = \sum_{k=0}^n \frac{1}{k!}$.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def compute_sqrt_newton(N, num_iterations=4):
+    x = N / 2.0
+    for i in range(num_iterations):
+        x = (x + N / x) / 2.0
+        print(f"Lần lặp {i+1}: x = {x:.5f}")
+    return x
+
+print("Tính căn bậc 2 của N=9:")
+result_sqrt = compute_sqrt_newton(9)
+print("Kết quả căn bậc 2 cuối cùng:", result_sqrt)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Tính căn bậc 2 của N=9:
+                  Lần lặp 1: x = 3.25000
+                  Lần lặp 2: x = 3.00962
+                  Lần lặp 3: x = 3.00002
+                  Lần lặp 4: x = 3.00000
+                  Kết quả căn bậc 2 cuối cùng: 3.0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 19: CHƯƠNG 7 ==================== -->
+      <section class="slide" id="slide-19">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 7: While Loops</span>
+          <h2 class="slide-title">7.1 Vòng Lặp While & Bài Toán Mô Phỏng Ném Đồng Xu</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Cấu Trúc While & Mô Phỏng Xác Suất</h4>
+              <ul class="feature-list">
+                <li><code>while condition:</code> Lặp lại khối lệnh khi điều kiện còn <code>True</code>.</li>
+                <li>Mẫu thiết kế <code>while True</code> + <code>break</code>: Lặp vô hạn cho tới khi gặp điều kiện
+                  thoát.</li>
+                <li><strong>Mô phỏng gieo đồng xu</strong>: Tập kết quả $S = \{\text{Head}, \text{Tail}\}$. Xác suất lý
+                  thuyết $P(\text{Head}) = 0.5$. Khi số lần gieo $N$ lớn, tỷ lệ thực tế sẽ tiến sát 50%!</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import random
+
+def simulate_coin_toss(n_trials):
+    heads, tails = 0, 0
+    count = 0
+    while count < n_trials:
+        toss = random.choice(["Head", "Tail"])
+        if toss == "Head":
+            heads += 1
+        else:
+            tails += 1
+        count += 1
+    
+    print(f"Tổng số lần gieo: {n_trials}")
+    print(f"Head: {heads} ({heads/n_trials*100:.1f}%)")
+    print(f"Tail: {tails} ({tails/n_trials*100:.1f}%)")
+
+simulate_coin_toss(1000)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Tổng số lần gieo: 1000
+                  Head: 504 (50.4%)
+                  Tail: 496 (49.6%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 20: CHƯƠNG 8 ==================== -->
+      <section class="slide" id="slide-20">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 8: Strings</span>
+          <h2 class="slide-title">8.1 Thao Tác Trên Chuỗi Kí Tự (Strings) & Kiểm Tra Chuỗi</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Indexing, Slicing & Các Phương Thức Kiểm Tra</h4>
+              <ul class="feature-list">
+                <li>Ghép chuỗi (<code>+</code>), Lặp chuỗi (<code>*</code>), Kiểm tra thuộc (<code>in</code>).</li>
+                <li><strong>Indexing & Slicing</strong>: <code>s[0]</code> (đầu), <code>s[-1]</code> (cuối),
+                  <code>s[start:stop]</code>.
+                </li>
+                <li><strong>Hàm kiểm tra chuỗi</strong>:
+                  <ul class="sub-list">
+                    <li><code>isdigit()</code>: Kiểm tra toàn chữ số.</li>
+                    <li><code>isalpha()</code>: Kiểm tra toàn chữ cái.</li>
+                    <li><code>islower()</code>, <code>isupper()</code>, <code>istitle()</code>, <code>isspace()</code>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">s = "AI VIETNAM"
+print("Độ dài len(s):", len(s))
+print("Kí tự đầu s[0]:", s[0])
+print("Cắt s[3:10]:  ", s[3:10])
+
+s_num = "12345"
+s_text = "Python"
+
+print("s_num.isdigit(): ", s_num.isdigit())
+print("s_text.isalpha(): ", s_text.isalpha())
+print("'hello'.islower():", 'hello'.islower())</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Độ dài len(s): 10
+                  Kí tự đầu s[0]: A
+                  Cắt s[3:10]: VIETNAM
+                  s_num.isdigit(): True
+                  s_text.isalpha(): True
+                  'hello'.islower(): True</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 21: CHƯƠNG 8 (TIẾP) ==================== -->
+      <section class="slide" id="slide-21">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 8: Strings</span>
+          <h2 class="slide-title">8.2 Phương Thức Biến Đổi Chuỗi & Xử Lý Lỗi <code>ValueError</code></h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Các Hàm Biến Đổi & Phân Tích Lỗi Thường Gặp</h4>
+              <ul class="feature-list">
+                <li><strong>Biến đổi chuỗi</strong>: <code>strip()</code>, <code>title()</code>, <code>upper()</code>,
+                  <code>lower()</code>, <code>replace()</code>, <code>swapcase()</code>.
+                </li>
+                <li><strong>Tìm kiếm & Đếm</strong>: <code>find()</code> (trả về <code>-1</code> nếu không thấy),
+                  <code>count()</code>, <code>startswith()</code>, <code>endswith()</code>.
+                </li>
+                <li><strong>Phân tích lỗi <code>index()</code></strong>: Hàm <code>index()</code> gây ngoại lệ
+                  <strong><code>ValueError</code></strong> nếu chuỗi con không tồn tại trong chuỗi mẹ!
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">text = "  python programming for beginners  "
+
+print("strip():    ", repr(text.strip()))
+print("title():    ", text.strip().title())
+print("replace():  ", text.replace("python", "Python 3"))
+
+# So sánh find() và index()
+print("find('prog'):", text.find("prog"))
+
+try:
+    idx = text.index("java")
+except ValueError as e:
+    print("Lỗi index(): substring not found! Exception caught.")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">strip(): 'python programming for beginners'
+                  title(): 'Python Programming For Beginners'
+                  replace(): ' Python 3 programming for beginners '
+                  find('prog'): 9
+                  Lỗi index(): substring not found! Exception caught.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 22: CHƯƠNG 9 ==================== -->
+      <section class="slide" id="slide-22">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 9: File Handling</span>
+          <h2 class="slide-title">9.1 Quy Trình Xử Lý Tệp Dữ Liệu (Read, Write, Append)</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Quy Trình 3 Bước Chuẩn Xử Lý Tệp</h4>
+              <ul class="feature-list">
+                <li><strong>Bước 1</strong>: Kết nối tệp (<code>open(file_path, mode)</code>).</li>
+                <li><strong>Bước 2</strong>: Thực hiện Đọc (<code>read()</code>, <code>readlines()</code>) hoặc Ghi
+                  (<code>write()</code>).</li>
+                <li><strong>Bước 3</strong>: Ngắt kết nối tệp (<code>close()</code>).</li>
+                <li><strong>Các Chế Độ Mở File (Modes)</strong>:
+                  <ul class="sub-list">
+                    <li><code>'r'</code>: Đọc file có sẵn.</li>
+                    <li><code>'w'</code>: Ghi mới (nếu chưa có) hoặc ghi đè (nếu đã có).</li>
+                    <li><code>'a'</code>: Ghi tiếp vào cuối file (Append).</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># 1. Ghi file mới ('w')
+f_out = open("demo.txt", "w", encoding="utf-8")
+f_out.write("Dòng 1: AI VIETNAM Course\n")
+f_out.write("Dòng 2: Basic Python\n")
+f_out.close()
+
+# 2. Đọc nội dung file ('r')
+f_in = open("demo.txt", "r", encoding="utf-8")
+content = f_in.read()
+print("Nội dung vừa đọc:\n" + content)
+f_in.close()</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Nội dung vừa đọc:
+                  Dòng 1: AI VIETNAM Course
+                  Dòng 2: Basic Python</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 23: CHƯƠNG 9 (TIẾP) ==================== -->
+      <section class="slide" id="slide-23">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 9: File Handling</span>
+          <h2 class="slide-title">9.2 Từ Khóa <code>with</code> & Case Study Tập Dữ Liệu IRIS</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Quản Lý Tệp An Toàn Với <code>with</code> & Parsers Dữ Liệu</h4>
+              <ul class="feature-list">
+                <li><strong>Từ khóa <code>with</code></strong>: Tự động giải phóng bộ nhớ và giải phóng file lock ngay
+                  cả khi có ngoại lệ xảy ra.</li>
+                <li><code>split(",")</code>: Phân tách các trường dữ liệu cách nhau bằng dấu phẩy.</li>
+                <li><code>" - ".join(list)</code>: Nối danh sách các chuỗi lại thành văn bản.</li>
+                <li><strong>Case Study IRIS</strong>: Đọc dòng văn bản, chuyển 4 thuộc tính đầu thành <code>float</code>
+                  (Features) và phần tử cuối thành Label.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python"># Mô phỏng xử lý dữ liệu IRIS Dataset
+iris_raw = """5.1,3.5,1.4,0.2,Iris-setosa
+4.9,3.0,1.4,0.2,Iris-setosa
+7.0,3.2,4.7,1.4,Iris-versicolor"""
+
+lines = iris_raw.strip().split("\n")
+for line in lines:
+    items = line.split(",")
+    features = [float(x) for x in items[:-1]]
+    label = items[-1]
+    print(f"Features: {features} --> Label: {label}")</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Features: [5.1, 3.5, 1.4, 0.2] --> Label: Iris-setosa
+                  Features: [4.9, 3.0, 1.4, 0.2] --> Label: Iris-setosa
+                  Features: [7.0, 3.2, 4.7, 1.4] --> Label: Iris-versicolor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 24: CHƯƠNG 10 ==================== -->
+      <section class="slide" id="slide-24">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 10: Advanced Topics</span>
+          <h2 class="slide-title">10.1 Khái Niệm Đệ Quy & Mô Phỏng Monte Carlo Ước Tính PI</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Mô Phỏng Xác Suất Hình Học Monte Carlo</h4>
+              <div class="math-block">
+                $$\frac{A_{circle}}{A_{square}} = \frac{\pi r^2}{s^2} = \frac{\pi (1)^2}{2^2} = \frac{\pi}{4} \approx
+                \frac{N_c}{N_s} \implies \pi \approx 4 \times \frac{N_c}{N_s}$$
+              </div>
+              <ul class="feature-list">
+                <li>Sinh $N_s$ điểm ngẫu nhiên $(x, y) \in [-1, 1] \times [-1, 1]$.</li>
+                <li>Đếm số điểm $N_c$ nằm bên trong đường tròn ($x^2 + y^2 \le 1$).</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import random
+
+def pi_monte_carlo(num_samples):
+    inside_circle = 0
+    for _ in range(num_samples):
+        x = random.uniform(-1, 1)
+        y = random.uniform(-1, 1)
+        if x**2 + y**2 <= 1:
+            inside_circle += 1
+    return 4 * inside_circle / num_samples
+
+print("Monte Carlo PI (10,000 mẫu): ", pi_monte_carlo(10000))
+print("Monte Carlo PI (100,000 mẫu):", pi_monte_carlo(100000))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Monte Carlo PI (10,000 mẫu): 3.1416
+                  Monte Carlo PI (100,000 mẫu): 3.14144</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 25: CHƯƠNG 10 (TIẾP) ==================== -->
+      <section class="slide" id="slide-25">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 10: Case Studies</span>
+          <h2 class="slide-title">10.2 Chuỗi Fibonacci & Tam Giác Pascal</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Thuật Toán Sinh Dãy Fibonacci & Tam Giác Pascal</h4>
+              <ul class="feature-list">
+                <li><strong>Fibonacci</strong>: $F_0 = 0, F_1 = 1, F_n = F_{n-1} + F_{n-2}$.</li>
+                <li><strong>Tam giác Pascal</strong>: Phần tử hàng $i$ vị trí $j$ là tổng 2 phần tử phía trên hàng
+                  $i-1$.</li>
+              </ul>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">def fibonacci(n):
+    seq = [0, 1]
+    while len(seq) < n:
+        seq.append(seq[-1] + seq[-2])
+    return seq[:n]
+
+def pascal_triangle(levels):
+    triangle = []
+    for i in range(levels):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+        triangle.append(row)
+    return triangle
+
+print("Fibonacci (9 phần tử):", fibonacci(9))
+print("Pascal Triangle (5 tầng):")
+for row in pascal_triangle(5):
+    print(row)</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">Fibonacci (9 phần tử): [0, 1, 1, 2, 3, 5, 8, 13, 21]
+                  Pascal Triangle (5 tầng):
+                  [1]
+                  [1, 1]
+                  [1, 2, 1]
+                  [1, 3, 3, 1]
+                  [1, 4, 6, 4, 1]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 26: CHƯƠNG 10 (TIẾP) ==================== -->
+      <section class="slide" id="slide-26">
+        <div class="slide-header">
+          <span class="slide-tag">Chương 10: Advanced Math</span>
+          <h2 class="slide-title">10.3 Chuỗi Taylor Xấp Xỉ Các Hàm Lượng Giác & Mũ</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Khai Triển Taylor Lượng Giác & Hàm Mũ</h4>
+              <div class="math-block">
+                $$\sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} -
+                \dots$$
+              </div>
+              <div class="math-block">
+                $$\cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} -
+                \dots$$
+              </div>
+              <div class="math-block">
+                $$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots$$
+              </div>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">PYTHON CODE</span>
+                <div class="code-actions">
+                  <button class="btn-code-action btn-copy-code">Sao chép</button>
+                  <button class="btn-code-action btn-run-code">Xem Output</button>
+                </div>
+              </div>
+              <pre class="code-block"><code class="language-python">import math
+
+def sin_taylor(x, terms=10):
+    val = 0
+    for n in range(terms):
+        val += (((-1)**n) / math.factorial(2*n + 1)) * (x**(2*n + 1))
+    return val
+
+def exp_taylor(x, terms=15):
+    return sum((x**n) / math.factorial(n) for n in range(terms))
+
+x_rad = math.pi / 6 # 30 độ -> sin = 0.5
+print("sin(pi/6) Taylor: ", sin_taylor(x_rad))
+print("sin(pi/6) Math library:", math.sin(x_rad))
+print("e^1.0 Taylor:     ", exp_taylor(1.0))</code></pre>
+              <div class="output-panel" style="display: none;">
+                <div class="output-header">OUTPUT:</div>
+                <div class="output-content">sin(pi/6) Taylor: 0.49999999999999994
+                  sin(pi/6) Math library: 0.5
+                  e^1.0 Taylor: 2.7182818284590455</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 27: CHEAT SHEET ==================== -->
+      <section class="slide" id="slide-27">
+        <div class="slide-header">
+          <span class="slide-tag">Tra Cứu Nhanh</span>
+          <h2 class="slide-title">Cheat Sheet Tổng Hợp Cú Pháp Python Cơ Bản</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>🛠 Cú Pháp Cơ Bản & Cấu Trúc Điều Kiện</h4>
+              <ul class="feature-list">
+                <li><strong>Chạy file:</strong> <code>python file.py</code></li>
+                <li><strong>Virtualenv:</strong> <code>python3 -m venv a_name</code> &
+                  <code>source a_name/bin/activate</code>
+                </li>
+                <li><strong>Gán biến:</strong> <code>x = 10</code> (int), <code>y = 3.14</code> (float),
+                  <code>s = "AI"</code> (str), <code>b = True</code> (bool)
+                </li>
+                <li><strong>Toán tử:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+                  <code>%</code> (dư), <code>//</code> (nguyên), <code>**</code> (mũ)
+                </li>
+                <li><strong>Định nghĩa hàm:</strong>
+                  <div style="margin-top: 4px;"><code>def func_name(p1, p2=0):</code></div>
+                  <div style="margin-left: 16px;"><code>'''docstring'''</code></div>
+                  <div style="margin-left: 16px;"><code>return p1 + p2</code></div>
+                </li>
+                <li><strong>Điều kiện:</strong> <code>if cond: ... elif cond: ... else: ...</code></li>
+              </ul>
+            </div>
+
+            <div class="content-box">
+              <h4>🔄 Vòng Lặp, Chuỗi & Tệp</h4>
+              <ul class="feature-list">
+                <li><strong>Vòng lặp For:</strong> <code>for i in range(start, stop, step):</code></li>
+                <li><strong>Vòng lặp While:</strong> <code>while cond:</code> / <code>while True:</code> (thoát bằng
+                  <code>break</code>)
+                </li>
+                <li><strong>Kiểm tra Chuỗi:</strong> <code>s.isdigit()</code>, <code>s.isalpha()</code>,
+                  <code>s.islower()</code>, <code>s.isupper()</code>
+                </li>
+                <li><strong>Biến đổi Chuỗi:</strong> <code>s.strip()</code>, <code>s.title()</code>,
+                  <code>s.replace(old, new)</code>, <code>s.find(sub)</code>
+                </li>
+                <li><strong>Xử lý Tệp:</strong> <code>with open("file.txt", "r", encoding="utf-8") as f:</code>
+                  <div style="margin-left: 16px;"><code>content = f.read()</code></div>
+                </li>
+                <li><strong>Các Chế độ File:</strong> <code>'r'</code> (Đọc), <code>'w'</code> (Ghi mới),
+                  <code>'a'</code> (Ghi nối tiếp)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 28: QUIZ INTERACTIVE ==================== -->
+      <section class="slide" id="slide-28">
+        <div class="slide-header">
+          <span class="slide-tag">Luyện Tập Kỹ Năng</span>
+          <h2 class="slide-title">Trắc Nghiệm Tổng Kết Kiến Thức Python Basic</h2>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2col">
+            <div class="content-box">
+              <h4>Câu Hỏi 1: Tại sao nên dùng Stable Softmax thay vì Naive Softmax?</h4>
+              <div class="info-card">
+                <strong>Đáp án:</strong> Vì khi vector đầu vào có các giá trị lớn (VD: $x = 1000$), hàm $e^{1000}$ sẽ
+                gây ra lỗi <strong>Tràn trên (Overflow)</strong>. Stable Softmax trừ đi $\max(\mathbf{x})$ giúp các lũy
+                thừa luôn nằm trong khoảng $(0, 1]$.
+              </div>
+
+              <h4 style="margin-top: 14px;">Câu Hỏi 2: Sự khác biệt giữa <code>find()</code> và <code>index()</code>
+                trên Chuỗi?</h4>
+              <div class="info-card">
+                <strong>Đáp án:</strong> Nếu không tìm thấy chuỗi con:
+                <ul class="sub-list">
+                  <li><code>find()</code> trả về <code>-1</code>.</li>
+                  <li><code>index()</code> văng lỗi ngoại lệ <strong><code>ValueError</code></strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="content-box">
+              <h4>Câu Hỏi 3: Tại sao nên dùng từ khóa <code>with</code> khi thao tác mở Tệp (File Handling)?</h4>
+              <div class="info-card">
+                <strong>Đáp án:</strong> Từ khóa <code>with</code> tự động gọi hàm <code>close()</code> để giải phóng
+                file lock an toàn tuyệt đối ngay cả khi xảy ra lỗi trong quá trình xử lý tệp.
+              </div>
+
+              <h4 style="margin-top: 14px;">Câu Hỏi 4: Nguyên lý mô phỏng Monte Carlo ước tính số PI?</h4>
+              <div class="info-card">
+                <strong>Đáp án:</strong> Dựa trên xác suất điểm ngẫu nhiên rơi vào hình tròn bán kính $r=1$ nằm trong
+                hình vuông kích thước $2 \times 2$. Tỷ lệ số điểm $\frac{N_c}{N_s} \approx \frac{\pi}{4} \implies \pi
+                \approx 4 \times \frac{N_c}{N_s}$.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Controls & Counter -->
+    <footer class="bottom-controls">
+      <div class="nav-buttons">
+        <button id="first-btn" class="btn-icon" title="Slide đầu tiên">⏮ Đầu</button>
+        <button id="prev-btn" class="btn-icon" title="Slide trước (Mũi tên Trái)">◀ Trước</button>
+      </div>
+
+      <div id="slide-counter" class="slide-counter">1 / 28</div>
+
+      <div class="nav-buttons">
+        <button id="next-btn" class="btn-primary" title="Slide tiếp theo (Mũi tên Phải / Space)">Sau ▶</button>
+        <button id="last-btn" class="btn-icon" title="Slide cuối cùng">Cuối ⏭</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Table of Contents Modal -->
+  <div id="toc-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">📌 Danh Mục Slide Thuyết Trình</h3>
+        <button id="close-modal" class="btn-icon">✕ Đóng</button>
+      </div>
+      <div class="modal-search">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Nhập từ khóa để tìm kiếm slide...">
+      </div>
+      <div id="toc-container" class="modal-content">
+        <!-- Dynamically generated by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast" class="toast">Đã sao chép!</div>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
